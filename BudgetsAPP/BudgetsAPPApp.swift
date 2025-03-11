@@ -12,6 +12,8 @@ struct BudgetsAPPApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, CoreDataManger.shared.viewContext)
+            // Core Data 的主视图上下文 (NSManagedObjectContext) 以环境变量的形式注入到整个应用中。
         }
     }
 }
